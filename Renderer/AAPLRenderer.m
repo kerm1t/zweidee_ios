@@ -80,6 +80,7 @@ Implementation of renderer class which performs Metal setup and per frame render
             {image.width, image.height, 1} // MTLSize
         };
 
+//      image.data[10] = 255;
         // Copy the bytes from our data object into the texture
         [_texture replaceRegion:region
                     mipmapLevel:0
@@ -184,6 +185,29 @@ Implementation of renderer class which performs Metal setup and per frame render
                                length:sizeof(_viewportSize)
                               atIndex:AAPLVertexInputIndexViewportSize];
 
+
+      
+        // -----------------------------
+        // fill buffer with random bytes
+        AAPLImage * image = [AAPLImage alloc];
+        image.randlines;
+      
+        NSUInteger bytesPerRow = 4 * image.width;
+      
+        MTLRegion region = {
+          { 6, 6, 0 },                   // MTLOrigin
+          {image.width, image.height, 1} // MTLSize
+        };
+
+        [_texture replaceRegion:region
+                    mipmapLevel:0
+                      withBytes:image.data.bytes
+                    bytesPerRow:bytesPerRow];
+        // fill buffer with random bytes
+        // -----------------------------
+
+      
+      
         // Set the texture object.  The AAPLTextureIndexBaseColor enum value corresponds
         ///  to the 'colorMap' argument in our 'samplingShader' function because its
         //   texture attribute qualifier also uses AAPLTextureIndexBaseColor for its index
@@ -196,7 +220,7 @@ Implementation of renderer class which performs Metal setup and per frame render
                           vertexCount:_numVertices];
 
         [renderEncoder endEncoding];
-
+      
         // Schedule a present once the framebuffer is complete using the current drawable
         [commandBuffer presentDrawable:view.currentDrawable];
     }

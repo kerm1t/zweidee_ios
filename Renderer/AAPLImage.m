@@ -159,4 +159,55 @@ Implementation of a very simple container for image data
     return self;
 }
 
+-(void)setpixel:(int)x :(int)y;
+{
+}
+
+-(void)randlines
+{
+//  _data[100] = 255;
+  _width = 500;
+  _height = 500;
+  
+  // Calculate the byte size of our image data.  Since we store our image data as
+  //   32-bits per pixel BGRA data
+  NSUInteger dataSize = _width * _height * 4;
+  
+  // Metal will not understand an image with 24-bpp format so we must convert our
+  //   TGA data from the 24-bit BGR format to a 32-bit BGRA format that Metal does
+  //   understand (as MTLPixelFormatBGRA8Unorm)
+  
+  NSMutableData *mutableData = [[NSMutableData alloc] initWithLength:dataSize];
+
+  uint8_t *dstImageData = mutableData.mutableBytes;
+  
+  // For every row of the image
+  int r,g,b;
+  r=g=b=255;//init
+  for(NSUInteger y = 0; y < _height; y++)
+  {
+    if (y%15 == 1)
+    {
+      r = rand()%255;
+      g = rand()%255;
+      b = rand()%255;
+    }
+    // For every column of the current row
+    for(NSUInteger x = 0; x < _width; x++)
+    {
+      // Calculate the index for the first byte of the pixel you're
+      // setting in destination image
+      NSUInteger dstPixelIndex = 4 * (y * _width + x);
+      
+      // Copy BGR channels from the source to the destination
+      // Set the alpha channel of the destination pixel to 255
+      dstImageData[dstPixelIndex + 0] = r;
+      dstImageData[dstPixelIndex + 1] = g;
+      dstImageData[dstPixelIndex + 2] = b;
+      dstImageData[dstPixelIndex + 3] = 255;
+    }
+  }
+  _data = mutableData;
+}
+
 @end
