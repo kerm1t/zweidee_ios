@@ -16,7 +16,7 @@ Implementation of a very simple container for image data
     if(self)
     {
         _gal = [[ObjC alloc] init];
-        [_gal init];
+        [_gal gal_init];
       
         NSString * fileExtension = tgaLocation.pathExtension;
 
@@ -224,11 +224,6 @@ Implementation of a very simple container for image data
   
   uint8_t *dstImageData = mutableData.mutableBytes;
   
-///  ObjC *gal = [[ObjC alloc] init]; // ... member now
-//  [gal gal_init:_data];
-///  [gal gal_init:dstImageData];
-
-///  [gal gal_doit];
   [_gal gal_doit:dstImageData];
 
   _data = mutableData;

@@ -9,7 +9,6 @@ Implementation of renderer class which performs Metal setup and per frame render
 @import MetalKit;
 
 #import "AAPLRenderer.h"
-#import "AAPLImage.h"
 
 // Header shared between C code here, which executes Metal API commands, and .metal files, which
 //   uses these types as input to the shaders
@@ -51,9 +50,10 @@ Implementation of renderer class which performs Metal setup and per frame render
         NSURL *imageFileLocation = [[NSBundle mainBundle] URLForResource:@"Image"
                                                            withExtension:@"tga"];
 
-        AAPLImage * image = [[AAPLImage alloc] initWithTGAFileAtLocation:imageFileLocation];
+//        AAPLImage * image = [[AAPLImage alloc] initWithTGAFileAtLocation:imageFileLocation];
+        _image = [[AAPLImage alloc] initWithTGAFileAtLocation:imageFileLocation];
 
-        if(!image)
+        if(!_image)
         {
             NSLog(@"Failed to create the image from %@", imageFileLocation.absoluteString);
             return nil;
@@ -66,25 +66,25 @@ Implementation of renderer class which performs Metal setup and per frame render
         textureDescriptor.pixelFormat = MTLPixelFormatBGRA8Unorm;
 
          // Set the pixel dimensions of the texture
-        textureDescriptor.width = image.width;
-        textureDescriptor.height = image.height;
+        textureDescriptor.width = _image.width;
+        textureDescriptor.height = _image.height;
 
         // Create the texture from the device by using the descriptor
         _texture = [_device newTextureWithDescriptor:textureDescriptor];
 
         // Calculate the number of bytes per row of our image.
-        NSUInteger bytesPerRow = 4 * image.width;
+        NSUInteger bytesPerRow = 4 * _image.width;
 
         MTLRegion region = {
             { 0, 0, 0 },                   // MTLOrigin
-            {image.width, image.height, 1} // MTLSize
+            {_image.width, _image.height, 1} // MTLSize
         };
 
 //      image.data[10] = 255;
         // Copy the bytes from our data object into the texture
         [_texture replaceRegion:region
                     mipmapLevel:0
-                      withBytes:image.data.bytes
+                      withBytes:_image.data.bytes
                     bytesPerRow:bytesPerRow];
 
         // Set up a simple MTLBuffer with our vertices which include texture coordinates
@@ -189,20 +189,20 @@ Implementation of renderer class which performs Metal setup and per frame render
       
         // -----------------------------
         // fill buffer with random bytes
-        AAPLImage * image = [AAPLImage alloc];
+//        AAPLImage * image = [AAPLImage alloc];
       //  [image randlines];
-      [image do_some_galaga];
+        [_image do_some_galaga];
       
-        NSUInteger bytesPerRow = 4 * image.width;
+        NSUInteger bytesPerRow = 4 * _image.width;
       
         MTLRegion region = {
           { 6, 6, 0 },                   // MTLOrigin
-          {image.width, image.height, 1} // MTLSize
+          {_image.width, _image.height, 1} // MTLSize
         };
 
         [_texture replaceRegion:region
                     mipmapLevel:0
-                      withBytes:image.data.bytes
+                      withBytes:_image.data.bytes
                     bytesPerRow:bytesPerRow];
         // fill buffer with random bytes
         // -----------------------------

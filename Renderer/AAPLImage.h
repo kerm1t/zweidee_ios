@@ -29,5 +29,5 @@ Header for a very simple container for image data
 // Image data in 32-bits-per-pixel (bpp) BGRA form (which is equivalent to MTLPixelFormatBGRA8Unorm)
 @property (nonatomic, readonly, nonnull) NSData *data;
 
-@property (nonatomic, readonly, nonnull) ObjC *gal;
+@property (nonatomic, readonly, nonnull) ObjC   *gal;
 @end

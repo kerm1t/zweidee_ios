@@ -24,12 +24,8 @@
 
 // önd nö gömm' de proöperdies
 @interface ObjC ()
-//- (void)gal_init : (nonnull NSData *)p_data; // wrapper
-///- (void)gal_init : (nonnull uint8_t *)p_imgdata; // wrapper
 - (void)gal_init; // wrapper
-///- (void)gal_doit;
 - (void)gal_doit : (nonnull uint8_t *)p_imgdata; // wrapper
-//@property (nonatomic, readonly, nonnull) NSData *data;
 @property (nonatomic, readonly, nonnull) uint8_t *imgData;
 @end
 

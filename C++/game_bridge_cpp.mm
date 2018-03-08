@@ -21,27 +21,20 @@
   }
   return self;
 }
-/*
-- (void)gal_init : (nonnull NSData *)p_data // wrapper
-{
-  p_galgame->init();
-  _data = p_data; // set pointer to member variable
-}
-*/
-///- (void)gal_init : (nonnull uint8_t *)p_imgdata // wrapper
+
 - (void)gal_init // wrapper
 {
   p_galgame->fbuf2d.width = 500;
   p_galgame->fbuf2d.height = 500;
   p_galgame->fbuf2d.imageSize = 500*500*3;
   p_galgame->init();
-//  _imgData = p_imgdata; // set pointer to member variable
 }
 
-///- (void)gal_doit
 - (void)gal_doit : (nonnull uint8_t *)p_imgdata // wrapper
 {
   unsigned char a_data[500*500*3];
+  memset(a_data, 0, p_galgame->fbuf2d.imageSize); // clear
+
   p_galgame->doit(a_data);
 
   _imgData = p_imgdata; // set pointer to member variable
@@ -65,6 +58,7 @@
     }
   }
 }
+
 - (void)dealloc
 {
   delete p_galgame;
