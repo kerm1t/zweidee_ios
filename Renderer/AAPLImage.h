@@ -6,6 +6,7 @@ Header for a very simple container for image data
 */
 
 #import <Foundation/Foundation.h>
+#include "game_bridge_cpp.h"
 
 // Our image
 @interface AAPLImage : NSObject
@@ -17,6 +18,7 @@ Header for a very simple container for image data
 -(void)setpixel:(int)x :(int)y;
 
 -(void)randlines;
+-(void)do_some_galaga;
 
 // Width of image in pixels
 @property (nonatomic, readonly) NSUInteger      width;
@@ -27,4 +29,5 @@ Header for a very simple container for image data
 // Image data in 32-bits-per-pixel (bpp) BGRA form (which is equivalent to MTLPixelFormatBGRA8Unorm)
 @property (nonatomic, readonly, nonnull) NSData *data;
 
+@property (nonatomic, readonly, nonnull) ObjC *gal;
 @end

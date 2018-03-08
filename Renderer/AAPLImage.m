@@ -15,6 +15,9 @@ Implementation of a very simple container for image data
     self = [super init];
     if(self)
     {
+        _gal = [[ObjC alloc] init];
+        [_gal init];
+      
         NSString * fileExtension = tgaLocation.pathExtension;
 
         if(!([fileExtension caseInsensitiveCompare:@"TGA"] == NSOrderedSame))
@@ -210,4 +213,24 @@ Implementation of a very simple container for image data
   _data = mutableData;
 }
 
+-(void)do_some_galaga
+{
+  _width = 500;
+  _height = 500;
+  
+  NSUInteger dataSize = _width * _height * 4;
+  
+  NSMutableData *mutableData = [[NSMutableData alloc] initWithLength:dataSize];
+  
+  uint8_t *dstImageData = mutableData.mutableBytes;
+  
+///  ObjC *gal = [[ObjC alloc] init]; // ... member now
+//  [gal gal_init:_data];
+///  [gal gal_init:dstImageData];
+
+///  [gal gal_doit];
+  [_gal gal_doit:dstImageData];
+
+  _data = mutableData;
+}
 @end

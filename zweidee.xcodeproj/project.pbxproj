@@ -34,6 +34,9 @@
 		63B42F161ED2063300859D09 /* AAPLShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7E9C11EB64A46003BB06D /* AAPLShaders.metal */; };
 		63B42F171ED2063800859D09 /* AAPLShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7E9C11EB64A46003BB06D /* AAPLShaders.metal */; };
 		63B42F181ED2063C00859D09 /* AAPLShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 3AF7E9C11EB64A46003BB06D /* AAPLShaders.metal */; };
+		AC5FD10720429AF500F6D3ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC5FD10620429AF500F6D3ED /* Images.xcassets */; };
+		ACBE3EB32051359200D65EBC /* game_bridge_cpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3EB22051359200D65EBC /* game_bridge_cpp.mm */; };
+		ACBE3EB4205135AA00D65EBC /* galaga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3EAD2051347100D65EBC /* galaga.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,9 +51,9 @@
 		3AF7E9BF1EB64A46003BB06D /* AAPLRenderer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAPLRenderer.m; sourceTree = "<group>"; };
 		3AF7E9C01EB64A46003BB06D /* AAPLShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAPLShaderTypes.h; sourceTree = "<group>"; };
 		3AF7E9C11EB64A46003BB06D /* AAPLShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = AAPLShaders.metal; sourceTree = "<group>"; };
-		3AF7E9C81EB64A46003BB06D /* BasicTexturing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicTexturing.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AF7E9E21EB64A46003BB06D /* BasicTexturing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicTexturing.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AF7E9F81EB64A46003BB06D /* BasicTexturing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicTexturing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AF7E9C81EB64A46003BB06D /* zweidee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zweidee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AF7E9E21EB64A46003BB06D /* zweidee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zweidee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AF7E9F81EB64A46003BB06D /* zweidee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zweidee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AFD65481F71A7070008A125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AFD654A1F71A7070008A125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3AFD654B1F71A7070008A125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +67,15 @@
 		3AFD65741F71A8A70008A125 /* AAPLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAPLAppDelegate.h; sourceTree = "<group>"; };
 		3AFD65751F71A8AB0008A125 /* AAPLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAPLViewController.h; sourceTree = "<group>"; };
 		A10E63CC346FEBB25CB0C6C8 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		AC5FD10620429AF500F6D3ED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "zweidee-iOS/Images.xcassets"; sourceTree = "<group>"; };
+		ACBE3EAD2051347100D65EBC /* galaga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = galaga.cpp; path = "C++/galaga.cpp"; sourceTree = SOURCE_ROOT; };
+		ACBE3EAE2051347100D65EBC /* galaga.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = galaga.h; path = "C++/galaga.h"; sourceTree = SOURCE_ROOT; };
+		ACBE3EB22051359200D65EBC /* game_bridge_cpp.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = game_bridge_cpp.mm; sourceTree = "<group>"; };
+		ACBE3EB520513F7500D65EBC /* zweidee_types.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = zweidee_types.h; sourceTree = "<group>"; };
+		ACBE3EB620513F7500D65EBC /* draw_lib.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = draw_lib.h; sourceTree = "<group>"; };
+		ACBE3EB720513F7500D65EBC /* game.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = game.h; sourceTree = "<group>"; };
+		ACBE3EB820513F7500D65EBC /* 2dframebuf.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = 2dframebuf.h; sourceTree = "<group>"; };
+		ACBE3EB9205149A300D65EBC /* game_bridge_cpp.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = game_bridge_cpp.h; sourceTree = "<group>"; };
 		E9FDE19044575D0A91B2F01C /* SampleCode.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +120,8 @@
 		3AF7E9B71EB64A46003BB06D = {
 			isa = PBXGroup;
 			children = (
+				ACBE3EB02051351C00D65EBC /* C++ */,
+				AC5FD10620429AF500F6D3ED /* Images.xcassets */,
 				3A93731A1EBB8C17007D505D /* README.md */,
 				3AF7E9BC1EB64A46003BB06D /* Renderer */,
 				3AFD65411F71A6D00008A125 /* Application */,
@@ -135,9 +149,9 @@
 		3AF7E9C91EB64A46003BB06D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3AF7E9C81EB64A46003BB06D /* BasicTexturing.app */,
-				3AF7E9E21EB64A46003BB06D /* BasicTexturing.app */,
-				3AF7E9F81EB64A46003BB06D /* BasicTexturing.app */,
+				3AF7E9C81EB64A46003BB06D /* zweidee.app */,
+				3AF7E9E21EB64A46003BB06D /* zweidee.app */,
+				3AF7E9F81EB64A46003BB06D /* zweidee.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,6 +199,21 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		ACBE3EB02051351C00D65EBC /* C++ */ = {
+			isa = PBXGroup;
+			children = (
+				ACBE3EB820513F7500D65EBC /* 2dframebuf.h */,
+				ACBE3EB620513F7500D65EBC /* draw_lib.h */,
+				ACBE3EB720513F7500D65EBC /* game.h */,
+				ACBE3EB520513F7500D65EBC /* zweidee_types.h */,
+				ACBE3EAD2051347100D65EBC /* galaga.cpp */,
+				ACBE3EAE2051347100D65EBC /* galaga.h */,
+				ACBE3EB9205149A300D65EBC /* game_bridge_cpp.h */,
+				ACBE3EB22051359200D65EBC /* game_bridge_cpp.mm */,
+			);
+			path = "C++";
+			sourceTree = "<group>";
+		};
 		B8979CDCA20D20AAEA3AEFD6 /* LICENSE */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,9 +233,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3AF7E9C71EB64A46003BB06D /* BasicTexturing-iOS */ = {
+		3AF7E9C71EB64A46003BB06D /* zweidee-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AF7EA1B1EB64A46003BB06D /* Build configuration list for PBXNativeTarget "BasicTexturing-iOS" */;
+			buildConfigurationList = 3AF7EA1B1EB64A46003BB06D /* Build configuration list for PBXNativeTarget "zweidee-iOS" */;
 			buildPhases = (
 				3AF7E9C41EB64A46003BB06D /* Sources */,
 				3AF7E9C51EB64A46003BB06D /* Frameworks */,
@@ -216,14 +245,14 @@
 			);
 			dependencies = (
 			);
-			name = "BasicTexturing-iOS";
+			name = "zweidee-iOS";
 			productName = iOS;
-			productReference = 3AF7E9C81EB64A46003BB06D /* BasicTexturing.app */;
+			productReference = 3AF7E9C81EB64A46003BB06D /* zweidee.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3AF7E9E11EB64A46003BB06D /* BasicTexturing-tvOS */ = {
+		3AF7E9E11EB64A46003BB06D /* zweidee-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AF7EA1E1EB64A46003BB06D /* Build configuration list for PBXNativeTarget "BasicTexturing-tvOS" */;
+			buildConfigurationList = 3AF7EA1E1EB64A46003BB06D /* Build configuration list for PBXNativeTarget "zweidee-tvOS" */;
 			buildPhases = (
 				3AF7E9DE1EB64A46003BB06D /* Sources */,
 				3AF7E9DF1EB64A46003BB06D /* Frameworks */,
@@ -233,14 +262,14 @@
 			);
 			dependencies = (
 			);
-			name = "BasicTexturing-tvOS";
+			name = "zweidee-tvOS";
 			productName = tvOS;
-			productReference = 3AF7E9E21EB64A46003BB06D /* BasicTexturing.app */;
+			productReference = 3AF7E9E21EB64A46003BB06D /* zweidee.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3AF7E9F71EB64A46003BB06D /* BasicTexturing-macOS */ = {
+		3AF7E9F71EB64A46003BB06D /* zweidee-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3AF7EA211EB64A46003BB06D /* Build configuration list for PBXNativeTarget "BasicTexturing-macOS" */;
+			buildConfigurationList = 3AF7EA211EB64A46003BB06D /* Build configuration list for PBXNativeTarget "zweidee-macOS" */;
 			buildPhases = (
 				3AF7E9F41EB64A46003BB06D /* Sources */,
 				3AF7E9F51EB64A46003BB06D /* Frameworks */,
@@ -250,9 +279,9 @@
 			);
 			dependencies = (
 			);
-			name = "BasicTexturing-macOS";
+			name = "zweidee-macOS";
 			productName = macOS;
-			productReference = 3AF7E9F81EB64A46003BB06D /* BasicTexturing.app */;
+			productReference = 3AF7E9F81EB64A46003BB06D /* zweidee.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -280,7 +309,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3AF7E9BB1EB64A46003BB06D /* Build configuration list for PBXProject "BasicTexturing" */;
+			buildConfigurationList = 3AF7E9BB1EB64A46003BB06D /* Build configuration list for PBXProject "zweidee" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -293,9 +322,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3AF7E9F71EB64A46003BB06D /* BasicTexturing-macOS */,
-				3AF7E9C71EB64A46003BB06D /* BasicTexturing-iOS */,
-				3AF7E9E11EB64A46003BB06D /* BasicTexturing-tvOS */,
+				3AF7E9F71EB64A46003BB06D /* zweidee-macOS */,
+				3AF7E9C71EB64A46003BB06D /* zweidee-iOS */,
+				3AF7E9E11EB64A46003BB06D /* zweidee-tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -306,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AFD65641F71A7240008A125 /* Main.storyboard in Resources */,
+				AC5FD10720429AF500F6D3ED /* Images.xcassets in Resources */,
 				3A1857F01EB7AF9E007D4F50 /* Image.tga in Resources */,
 				3AFD65631F71A7240008A125 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -336,6 +366,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACBE3EB4205135AA00D65EBC /* galaga.cpp in Sources */,
+				ACBE3EB32051359200D65EBC /* game_bridge_cpp.mm in Sources */,
 				63B42F161ED2063300859D09 /* AAPLShaders.metal in Sources */,
 				3AF7EA0A1EB64A46003BB06D /* AAPLRenderer.m in Sources */,
 				3A30EDF91EB67EA800B4FC0B /* AAPLImage.m in Sources */,
@@ -509,6 +541,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E9FDE19044575D0A91B2F01C /* SampleCode.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -520,8 +554,8 @@
 				INFOPLIST_FILE = Application/iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.anigators.BasicTexturing;
-				PRODUCT_NAME = BasicTexturing;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anigators.zweidee;
+				PRODUCT_NAME = zweidee;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -532,6 +566,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E9FDE19044575D0A91B2F01C /* SampleCode.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -540,8 +576,8 @@
 				INFOPLIST_FILE = Application/iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.anigators.BasicTexturing;
-				PRODUCT_NAME = BasicTexturing;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anigators.zweidee;
+				PRODUCT_NAME = zweidee;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -562,7 +598,7 @@
 				INFOPLIST_FILE = Application/tvOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.BasicTexturing${SAMPLE_CODE_DISAMBIGUATOR}";
-				PRODUCT_NAME = BasicTexturing;
+				PRODUCT_NAME = zweidee;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -580,7 +616,7 @@
 				INFOPLIST_FILE = Application/tvOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.BasicTexturing${SAMPLE_CODE_DISAMBIGUATOR}";
-				PRODUCT_NAME = BasicTexturing;
+				PRODUCT_NAME = zweidee;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -605,7 +641,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.BasicTexturing${SAMPLE_CODE_DISAMBIGUATOR}";
-				PRODUCT_NAME = BasicTexturing;
+				PRODUCT_NAME = zweidee;
 				PROVISIONING_PROFILE = "9f8b6481-7c08-4fc3-80a7-89c23f77031f";
 				PROVISIONING_PROFILE_SPECIFIER = an1m8;
 				SDKROOT = macosx;
@@ -625,7 +661,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.BasicTexturing${SAMPLE_CODE_DISAMBIGUATOR}";
-				PRODUCT_NAME = BasicTexturing;
+				PRODUCT_NAME = zweidee;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 			};
@@ -634,7 +670,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3AF7E9BB1EB64A46003BB06D /* Build configuration list for PBXProject "BasicTexturing" */ = {
+		3AF7E9BB1EB64A46003BB06D /* Build configuration list for PBXProject "zweidee" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3AF7EA191EB64A46003BB06D /* Debug */,
@@ -643,7 +679,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AF7EA1B1EB64A46003BB06D /* Build configuration list for PBXNativeTarget "BasicTexturing-iOS" */ = {
+		3AF7EA1B1EB64A46003BB06D /* Build configuration list for PBXNativeTarget "zweidee-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3AF7EA1C1EB64A46003BB06D /* Debug */,
@@ -652,7 +688,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AF7EA1E1EB64A46003BB06D /* Build configuration list for PBXNativeTarget "BasicTexturing-tvOS" */ = {
+		3AF7EA1E1EB64A46003BB06D /* Build configuration list for PBXNativeTarget "zweidee-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3AF7EA1F1EB64A46003BB06D /* Debug */,
@@ -661,7 +697,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3AF7EA211EB64A46003BB06D /* Build configuration list for PBXNativeTarget "BasicTexturing-macOS" */ = {
+		3AF7EA211EB64A46003BB06D /* Build configuration list for PBXNativeTarget "zweidee-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3AF7EA221EB64A46003BB06D /* Debug */,

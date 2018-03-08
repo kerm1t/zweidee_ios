@@ -190,7 +190,8 @@ Implementation of renderer class which performs Metal setup and per frame render
         // -----------------------------
         // fill buffer with random bytes
         AAPLImage * image = [AAPLImage alloc];
-        image.randlines;
+      //  [image randlines];
+      [image do_some_galaga];
       
         NSUInteger bytesPerRow = 4 * image.width;
       
