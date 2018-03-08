@@ -29,7 +29,8 @@
 @property (nonatomic, readonly, nonnull) uint8_t *imgData;
 @property (nonatomic) int w;
 @property (nonatomic) int h;
-@property (nonatomic) int wImg;
+@property (nonatomic) int wDst;
+@property (nonatomic) uint8_t Blocksize;
 @end
 
 #endif /* game_bridge_cpp_h */

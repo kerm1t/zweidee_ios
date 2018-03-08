@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-// http://www.drdobbs.com/cpp/interoperating-between-c-and-objective-c/240165502
+
+// a) concept:  http://www.drdobbs.com/cpp/interoperating-between-c-and-objective-c/240165502
+// b) how to access props, ... https://stackoverflow.com/questions/19229574/calling-c-from-objective-c
+
 #include "game_bridge_cpp.h"
 
 @implementation ObjC
@@ -26,6 +29,9 @@
 {
   _w = 64;
   _h = 64;
+  _wDst = 512;
+  _Blocksize = 8; // 512 / 64 = 8
+  
   p_galgame->fbuf2d.width = _w;
   p_galgame->fbuf2d.height = _h;
   p_galgame->fbuf2d.imageSize = _w*_h*3;
@@ -49,12 +55,12 @@
     for(NSUInteger x = 0; x < _width; x++)
     {
       NSUInteger srcPos = 3 * (y * _width + x);
-      for(NSUInteger yDst = 0; yDst < 8; yDst++)
+      for(NSUInteger yDst = 0; yDst < _Blocksize; yDst++)
       {
         // For every column of the current row
-        for(NSUInteger xDst = 0; xDst < 8; xDst++)
+        for(NSUInteger xDst = 0; xDst < _Blocksize; xDst++)
         {
-          NSUInteger dstPixelIndex = 4 * ((y*8+yDst) * 512 + (x*8+xDst));
+          NSUInteger dstPixelIndex = 4 * ((y*_Blocksize+yDst) * _wDst + (x*_Blocksize+xDst));
           // Copy BGR channels from the source to the destination
           // Set the alpha channel of the destination pixel to 255
           _imgData[dstPixelIndex + 0] = a_data[srcPos];
