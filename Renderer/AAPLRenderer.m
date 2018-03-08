@@ -196,7 +196,7 @@ Implementation of renderer class which performs Metal setup and per frame render
         NSUInteger bytesPerRow = 4 * _image.width;
       
         MTLRegion region = {
-          { 6, 6, 0 },                   // MTLOrigin
+          { 0, 0, 0 },                   // MTLOrigin
           {_image.width, _image.height, 1} // MTLSize
         };
 

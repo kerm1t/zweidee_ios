@@ -215,8 +215,8 @@ Implementation of a very simple container for image data
 
 -(void)do_some_galaga
 {
-  _width = 500;
-  _height = 500;
+  _width = 512;  // changed to 512, as it is multiple of 64 (galaga screen size)
+  _height = 512;
   
   NSUInteger dataSize = _width * _height * 4;
   

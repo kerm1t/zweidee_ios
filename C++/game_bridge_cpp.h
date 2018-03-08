@@ -27,6 +27,9 @@
 - (void)gal_init; // wrapper
 - (void)gal_doit : (nonnull uint8_t *)p_imgdata; // wrapper
 @property (nonatomic, readonly, nonnull) uint8_t *imgData;
+@property (nonatomic) int w;
+@property (nonatomic) int h;
+@property (nonatomic) int wImg;
 @end
 
 #endif /* game_bridge_cpp_h */

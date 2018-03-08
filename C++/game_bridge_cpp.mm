@@ -24,37 +24,45 @@
 
 - (void)gal_init // wrapper
 {
-  p_galgame->fbuf2d.width = 500;
-  p_galgame->fbuf2d.height = 500;
-  p_galgame->fbuf2d.imageSize = 500*500*3;
+  _w = 64;
+  _h = 64;
+  p_galgame->fbuf2d.width = _w;
+  p_galgame->fbuf2d.height = _h;
+  p_galgame->fbuf2d.imageSize = _w*_h*3;
   p_galgame->init();
 }
 
 - (void)gal_doit : (nonnull uint8_t *)p_imgdata // wrapper
 {
-  unsigned char a_data[500*500*3];
+  unsigned char a_data[_w*_h*3];
   memset(a_data, 0, p_galgame->fbuf2d.imageSize); // clear
 
   p_galgame->doit(a_data);
 
   _imgData = p_imgdata; // set pointer to member variable
 
-  NSUInteger _width = 500;
-  NSUInteger _height = 500;
+  NSUInteger _width = _w;
+  NSUInteger _height = _h;
   for(NSUInteger y = 0; y < _height; y++)
   {
     // For every column of the current row
     for(NSUInteger x = 0; x < _width; x++)
     {
-      NSUInteger dstPixelIndex = 4 * (y * _width + x);
       NSUInteger srcPos = 3 * (y * _width + x);
-      
-      // Copy BGR channels from the source to the destination
-      // Set the alpha channel of the destination pixel to 255
-      _imgData[dstPixelIndex + 0] = a_data[srcPos];
-      _imgData[dstPixelIndex + 1] = a_data[srcPos+1];
-      _imgData[dstPixelIndex + 2] = a_data[srcPos+2];
-      _imgData[dstPixelIndex + 3] = 255;
+      for(NSUInteger yDst = 0; yDst < 8; yDst++)
+      {
+        // For every column of the current row
+        for(NSUInteger xDst = 0; xDst < 8; xDst++)
+        {
+          NSUInteger dstPixelIndex = 4 * ((y*8+yDst) * 512 + (x*8+xDst));
+          // Copy BGR channels from the source to the destination
+          // Set the alpha channel of the destination pixel to 255
+          _imgData[dstPixelIndex + 0] = a_data[srcPos];
+          _imgData[dstPixelIndex + 1] = a_data[srcPos+1];
+          _imgData[dstPixelIndex + 2] = a_data[srcPos+2];
+          _imgData[dstPixelIndex + 3] = 255;
+        }
+      }
     }
   }
 }
