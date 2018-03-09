@@ -213,7 +213,7 @@ Implementation of a very simple container for image data
   _data = mutableData;
 }
 
--(void)do_some_galaga
+-(void)do_some_galaga:(int)x
 {
   _width = 512;  // changed to 512, as it is multiple of 64 (galaga screen size)
   _height = 512;
@@ -224,7 +224,7 @@ Implementation of a very simple container for image data
   
   uint8_t *dstImageData = mutableData.mutableBytes;
   
-  [_gal gal_doit:dstImageData];
+  [_gal gal_doit:dstImageData:x];
 
   _data = mutableData;
 }

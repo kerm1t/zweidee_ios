@@ -18,7 +18,7 @@ Header for a very simple container for image data
 -(void)setpixel:(int)x :(int)y;
 
 -(void)randlines;
--(void)do_some_galaga;
+-(void)do_some_galaga:(int)x;
 
 // Width of image in pixels
 @property (nonatomic, readonly) NSUInteger      width;

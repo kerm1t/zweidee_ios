@@ -6,6 +6,7 @@ Header for renderer class which performs Metal setup and per frame rendering
 */
 
 @import MetalKit;
+@import CoreMotion;
 
 #import "AAPLImage.h"
 
@@ -15,5 +16,6 @@ Header for renderer class which performs Metal setup and per frame rendering
 - (nonnull instancetype)initWithMetalKitView:(nonnull MTKView *)mtkView;
 
 @property (nonnull,nonatomic,readonly) AAPLImage * image;
+@property (nonnull,nonatomic,readonly) CMMotionManager * motman;
 
 @end

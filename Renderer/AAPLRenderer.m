@@ -53,6 +53,12 @@ Implementation of renderer class which performs Metal setup and per frame render
 //        AAPLImage * image = [[AAPLImage alloc] initWithTGAFileAtLocation:imageFileLocation];
         _image = [[AAPLImage alloc] initWithTGAFileAtLocation:imageFileLocation];
 
+        _motman = [[CMMotionManager alloc] init];
+        [_motman startAccelerometerUpdates];
+        _motman.startGyroUpdates;
+        _motman.startMagnetometerUpdates;
+        _motman.startDeviceMotionUpdates;
+
         if(!_image)
         {
             NSLog(@"Failed to create the image from %@", imageFileLocation.absoluteString);
@@ -186,12 +192,17 @@ Implementation of renderer class which performs Metal setup and per frame render
                               atIndex:AAPLVertexInputIndexViewportSize];
 
 
-      
+        CMGyroData * gd;
+        gd = [_motman gyroData];
+        float rot_y = gd.rotationRate.y; // s. https://developer.apple.com/documentation/coremotion/getting_raw_gyroscope_events
+//      if (rot_y > 0) rot_y = 1;
+//      if (rot_y < 0) rot_y = -1;
+
         // -----------------------------
         // fill buffer with random bytes
 //        AAPLImage * image = [AAPLImage alloc];
       //  [image randlines];
-        [_image do_some_galaga];
+      [_image do_some_galaga:(rot_y*5)]; // 10 zu schnell
       
         NSUInteger bytesPerRow = 4 * _image.width;
       

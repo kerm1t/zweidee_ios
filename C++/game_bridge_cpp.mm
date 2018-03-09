@@ -38,8 +38,12 @@
   p_galgame->init();
 }
 
-- (void)gal_doit : (nonnull uint8_t *)p_imgdata // wrapper
+- (void)gal_doit : (nonnull uint8_t *)p_imgdata : (int)x // wrapper
 {
+  
+//  p_galgame->spacecraft.box.x=32+x;
+  p_galgame->spacecraft.box.x+=x;
+
   unsigned char a_data[_w*_h*3];
   memset(a_data, 0, p_galgame->fbuf2d.imageSize); // clear
 

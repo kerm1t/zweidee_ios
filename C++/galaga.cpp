@@ -9,7 +9,7 @@ int galaga::CGalaga::init()
 {
   a_episode_len[0] = fbuf2d.width - (2 * 10); // size of progress bar ;-)
   a_episode_active[0] = false;
-  iepisode = 1;///0;
+  iepisode = 1;//0;
   iloopy = 0;
 
   spacecraft.state = spacecraft::normal;
