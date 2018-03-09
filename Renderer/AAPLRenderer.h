@@ -18,4 +18,6 @@ Header for renderer class which performs Metal setup and per frame rendering
 @property (nonnull,nonatomic,readonly) AAPLImage * image;
 @property (nonnull,nonatomic,readonly) CMMotionManager * motman;
 
+- (void) tapped;
+
 @end

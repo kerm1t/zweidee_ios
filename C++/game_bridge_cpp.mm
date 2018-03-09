@@ -42,8 +42,12 @@
 {
   
 //  p_galgame->spacecraft.box.x=32+x;
-  p_galgame->spacecraft.box.x+=x;
-
+//  p_galgame->spacecraft.box.x+=x;
+  signed int tmp = p_galgame->spacecraft.box.x+x;
+  if (tmp < 0) p_galgame->spacecraft.box.x=0;
+  else if (tmp > (_w-p_galgame->spacecraft.box.w)) p_galgame->spacecraft.box.x=_w-p_galgame->spacecraft.box.w;
+  else p_galgame->spacecraft.box.x = tmp;
+  
   unsigned char a_data[_w*_h*3];
   memset(a_data, 0, p_galgame->fbuf2d.imageSize); // clear
 
@@ -75,6 +79,16 @@
       }
     }
   }
+}
+
+- (void)gal_fire
+{
+  p_galgame->fire();
+}
+
+- (void)gal_reset
+{
+  p_galgame->init();
 }
 
 - (void)dealloc

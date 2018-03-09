@@ -242,5 +242,10 @@ Implementation of renderer class which performs Metal setup and per frame render
     [commandBuffer commit];
 }
 
+-(void) tapped
+{
+  [_image tapped];
+}
+
 @end
 

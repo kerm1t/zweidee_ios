@@ -26,6 +26,8 @@
 @interface ObjC ()
 - (void)gal_init; // wrapper
 - (void)gal_doit : (nonnull uint8_t *)p_imgdata: (int)x; // wrapper
+- (void)gal_fire;
+- (void)gal_reset;
 @property (nonatomic, readonly, nonnull) uint8_t *imgData;
 @property (nonatomic) int w;
 @property (nonatomic) int h;

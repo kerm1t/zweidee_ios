@@ -228,4 +228,11 @@ Implementation of a very simple container for image data
 
   _data = mutableData;
 }
+
+-(void)tapped
+{
+//  [_gal gal_reset];
+  [_gal gal_fire];
+}
+
 @end

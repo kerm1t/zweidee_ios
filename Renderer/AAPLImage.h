@@ -15,10 +15,11 @@ Header for a very simple container for image data
 //    flipped, or color mapped images.  Only support TGA files with 32-bits per pixels
 -(nullable instancetype) initWithTGAFileAtLocation:(nonnull NSURL *)location;
 
--(void)setpixel:(int)x :(int)y;
+-(void) setpixel:(int)x :(int)y;
 
--(void)randlines;
--(void)do_some_galaga:(int)x;
+-(void) randlines;
+-(void) do_some_galaga:(int)x;
+-(void) tapped;
 
 // Width of image in pixels
 @property (nonatomic, readonly) NSUInteger      width;

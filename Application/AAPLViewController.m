@@ -41,6 +41,32 @@ Implementation of our cross-platform view controller
     [_renderer mtkView:_view drawableSizeWillChange:_view.drawableSize];
 
     _view.delegate = _renderer;
+  
+  [self addGestureRecognizers];
+}
+// screen rotation verhindern: nicht programmatisch, sondern durch Einstellung in der plist.info
+// https://stackoverflow.com/questions/31794317/how-can-i-lock-orientation-for-a-specific-view-an-objective-c-iphone-app-in-ios
+/*
+-(void) viewDidAppear:(BOOL)animated
+{
+  [super viewDidAppear:false];
+//  [[UIDevice currentDevice] setValue:@(UIInterfaceOrientationLandscapeLeft) forKey:@"orientation"];
+  [[UIDevice currentDevice] setValue:@(UIInterfaceOrientationPortraitUpsideDown) forKey:@"orientation"];
+}
+*/
+// wie man die Tipp events zu seinem Projekt hinzufügt: https://www.youtube.com/watch?v=mdvoDAoTMd4
+- (void) addGestureRecognizers
+{
+  // here we have tappi, our little taprecognizer
+  UITapGestureRecognizer *tappi = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(TapRecognized:)];
+  [_view addGestureRecognizer:tappi];
+}
+
+// hier auch gut, dort sieht man, wie die location ermittelt wird: https://stackoverflow.com/questions/4660371/how-to-add-a-touch-event-to-a-uiview
+- (void) TapRecognized:(UITapGestureRecognizer *) recognizer
+{
+//  CGPoint location = [recognizer locationInView:[recognizer.view superview]];
+  [_renderer tapped];
 }
 
 @end
