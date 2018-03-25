@@ -16,7 +16,7 @@ int galaga::CGalaga::init()
   spacecraft.lives = 4;
   spacecraft.dir = 0;
   spacecraft.box.x = (int)(fbuf2d.width/2) - (int)7/2;
-  spacecraft.box.y = 60-1;
+  spacecraft.box.y = 48;//60-1;
   spacecraft.box.w = 7;
   spacecraft.box.h = 3;
 

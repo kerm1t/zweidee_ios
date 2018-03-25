@@ -93,17 +93,21 @@ Implementation of renderer class which performs Metal setup and per frame render
                       withBytes:_image.data.bytes
                     bytesPerRow:bytesPerRow];
 
-        // Set up a simple MTLBuffer with our vertices which include texture coordinates
+// https://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions
+#define dimx 750/2
+#define dimy 1334/2
+
+      // Set up a simple MTLBuffer with our vertices which include texture coordinates
         static const AAPLVertex quadVertices[] =
         {
             // Pixel positions, Texture coordinates
-            { {  250,  -250 },  { 1.f, 0.f } },
-            { { -250,  -250 },  { 0.f, 0.f } },
-            { { -250,   250 },  { 0.f, 1.f } },
+            { {  dimx,  -dimy },  { 1.f, 0.f } },
+            { { -dimx,  -dimy },  { 0.f, 0.f } },
+            { { -dimx,   dimy },  { 0.f, 1.f } },
 
-            { {  250,  -250 },  { 1.f, 0.f } },
-            { { -250,   250 },  { 0.f, 1.f } },
-            { {  250,   250 },  { 1.f, 1.f } },
+            { {  dimx,  -dimy },  { 1.f, 0.f } },
+            { { -dimx,   dimy },  { 0.f, 1.f } },
+            { {  dimx,   dimy },  { 1.f, 1.f } },
         };
 
         // Create our vertex buffer, and initialize it with our quadVertices array

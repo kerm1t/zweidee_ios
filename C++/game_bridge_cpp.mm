@@ -36,6 +36,8 @@
   p_galgame->fbuf2d.height = _h;
   p_galgame->fbuf2d.imageSize = _w*_h*3;
   p_galgame->init();
+  
+//  p_galgame->spacecraft.box.y = 45;//60-1;
 }
 
 - (void)gal_doit : (nonnull uint8_t *)p_imgdata : (int)x // wrapper
